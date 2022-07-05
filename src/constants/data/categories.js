@@ -17,7 +17,7 @@ export const categories = [
     },
     {
         id: 4,
-        title: 'Figuazas',
+        title: 'Figazas',
         color: "#FFE66D",
     },
     {

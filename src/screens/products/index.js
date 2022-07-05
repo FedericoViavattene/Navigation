@@ -3,7 +3,7 @@ import {Button, Text, View} from "react-native";
 import React from "react";
 import { styles } from "./styles";
 
-const Products = ({navigation, route}) => {
+const ProductsScreen = ({navigation, route}) => {
     return (
         <View style= {styles.container}>
             <Text>Products</Text>
@@ -12,4 +12,4 @@ const Products = ({navigation, route}) => {
     )
 }
 
-export default Products;
+export default ProductsScreen;

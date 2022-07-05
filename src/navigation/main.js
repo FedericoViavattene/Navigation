@@ -16,12 +16,34 @@ const MainNavigator = () => {
             screenOptions={{
                 headerStyle: {
                     backgroundColor: isAndroid ? colors.primary : colors.secondary,
+                },
+                headerTintColor: isAndroid ? colors.black : colors.white,
+                headerTitleStyle: {
+                    fontFamily: 'Lato-Bold',
                 }
             }}
         >
-            <Stack.Screen name= 'Categories' component = {Categories}/>
-            <Stack.Screen name= 'Products' component = {Products}/>
-            <Stack.Screen name= 'ProductDetail' component = {ProductDetail}/>
+            <Stack.Screen 
+            name= 'Categories' 
+            component = {Categories}
+            options = {{
+                title: "Panaderia"
+            }}
+            />
+            <Stack.Screen 
+            name= 'Products' 
+            component = {Products}
+            options = {{
+                title: "Tipos de pan"
+            }}
+            />
+            <Stack.Screen 
+            name= 'ProductDetail' 
+            component = {ProductDetail}
+            options = {{
+                title: "Detalles del Pan"
+            }}
+            />
         </Stack.Navigator>
     )
 }
