@@ -7,7 +7,7 @@ import { styles } from "./styles";
 const CategoriesScreen = ({navigation, route}) => {
     
     const onHandlerSelectedCategory = (item) => {
-        navigation.navigate ('products', {
+        navigation.navigate ('Products', {
             categoryId: item.id,
             name:  item.title
         })
