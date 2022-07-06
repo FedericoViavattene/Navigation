@@ -33,16 +33,16 @@ const MainNavigator = () => {
             <Stack.Screen 
             name= 'Products' 
             component = {Products}
-            options = {{
-                title: "Tipos de pan"
-            }}
+            options = {({ route }) => ({
+                title: route.params.name,
+            })}
             />
             <Stack.Screen 
             name= 'ProductDetail' 
             component = {ProductDetail}
-            options = {{
-                title: "Detalles del Pan"
-            }}
+            options = {({ route }) =>({
+                title: route.params.name,
+            })}
             />
         </Stack.Navigator>
     )

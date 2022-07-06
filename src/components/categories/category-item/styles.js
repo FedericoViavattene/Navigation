@@ -2,11 +2,12 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../../constants/themes/colors";
 
 export const styles = StyleSheet.create({
-    container: {
+    containerItem: {
         flex: 1,
         borderRadius: 10,
-        margin: 15,
-        height: 150
+        marginHorizontal: 20,
+        marginVertical: 10,
+        height: 150,
     },
     item: {
         flex: 1,
