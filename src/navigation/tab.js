@@ -11,6 +11,9 @@ const TabNavigator = () => {
     return  (
         <BottomTab.Navigator initialRouteName="Shop" screenOptions={{
             headerShown: false,
+            tabBarActiveTintColor: colors.black,
+            tabBarInactiveTintColor: colors.text,
+                
             }}>
             <BottomTab.Screen 
             name = 'Shop' 
@@ -29,7 +32,8 @@ const TabNavigator = () => {
                 tabBarLabel:'Carrito',
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name={focused ? 'cart' : 'cart-outline' } size = {20} color={focused ? colors.primary : colors.secondary }/>
-                )
+                ),
+                
             }}
             />
         </BottomTab.Navigator>
