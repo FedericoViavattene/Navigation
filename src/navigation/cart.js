@@ -1,5 +1,4 @@
-import {Categories, ProductDetail, Products} from '../screens/index';
-
+import {Cart} from '../screens/index';
 import React from "react";
 import { colors } from '../constants/themes/colors';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -7,12 +6,12 @@ import { isAndroid } from '../constants/utils/index';
 
 const Stack = createNativeStackNavigator()
 
-const MainNavigator = () => {
+const CartNavigator = () => {
 
     return (
 
         <Stack.Navigator 
-            initialRouteName ='Categories'
+            initialRouteName ='Cart'
             screenOptions={{
                 headerStyle: {
                     backgroundColor: isAndroid ? colors.primary : colors.secondary,
@@ -24,25 +23,11 @@ const MainNavigator = () => {
             }}
         >
             <Stack.Screen 
-            name= 'Categories' 
-            component = {Categories}
-            />
-            <Stack.Screen 
-            name= 'Products' 
-            component = {Products}
-            options = {({ route }) => ({
-                title: route.params.name,
-            })}
-            />
-            <Stack.Screen 
-            name= 'ProductDetail' 
-            component = {ProductDetail}
-            options = {({ route }) =>({
-                title: route.params.name,
-            })}
+            name= 'Cart' 
+            component = {Cart}
             />
         </Stack.Navigator>
     )
 }
 
-export default MainNavigator;
+export default CartNavigator;
