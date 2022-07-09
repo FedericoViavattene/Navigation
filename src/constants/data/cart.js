@@ -5,7 +5,7 @@ export const cart = [
         name: 'Pan de manteca',
         description: 'Rico pan de manteca',
         weight: '10gr',
-        price: 0.5,
+        price: 6,
         quantity: 5,
     },
     {
@@ -14,7 +14,7 @@ export const cart = [
         name: 'Pan de canela',
         description: 'Sabor abundante de canela',
         weight: '35gr',
-        price: 0.25,
+        price: 2.5,
         quantity: 1,
     }
 ]
