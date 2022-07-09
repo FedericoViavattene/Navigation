@@ -1,6 +1,7 @@
 import CartNavigator from "./cart";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MainNavigator from "./main";
+import OrdersNavigator from "./orders";
 import React from "react";
 import { Text } from "react-native";
 import { colors } from "../constants/themes";
@@ -40,6 +41,17 @@ const TabNavigator = () => {
                 tabBarLabel:({focused}) => LabelBottomTab(focused, "Carrito"),
                 tabBarIcon: ({ focused }) => (
                     <Ionicons name={focused ? 'cart' : 'cart-outline' } size = {20} color={focused ? colors.primary : colors.secondary }/>
+                ),
+                
+            }}
+            />
+             <BottomTab.Screen 
+            name = 'OrdersTab' 
+            component={OrdersNavigator}
+            options ={{
+                tabBarLabel:({focused}) => LabelBottomTab(focused, "Ordenes"),
+                tabBarIcon: ({ focused }) => (
+                    <Ionicons name={focused ? 'list' : 'list-outline' } size = {20} color={focused ? colors.primary : colors.secondary }/>
                 ),
                 
             }}
