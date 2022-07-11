@@ -3,9 +3,11 @@ import React from "react";
 import {View} from "react-native";
 import { products } from "../../constants/data/index";
 import { styles } from "./styles";
+import {useSelector} from 'react-redux';
 
-const ProductsScreen = ({navigation, route}) => {
-    const filteredProducts = products.filter(item => item.categoryId === route.params.categoryId)
+const ProductsScreen = ({navigation}) => {
+    const filteredProducts = useSelector(state => state.products.filteredProducts)
+    const productSelected = useSelector (state => state.products.selected)
     const onHandlerSelectedProduct = (item) => {
         navigation.navigate ('ProductDetail', { 
             product: item,
