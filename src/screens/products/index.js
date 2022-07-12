@@ -1,31 +1,34 @@
-import { Products } from "../../components/index";
-import React from "react";
-import {View} from "react-native";
-import { products } from "../../constants/data/index";
-import { styles } from "./styles";
-import {useSelector} from 'react-redux';
+import React, { useEffect } from 'react'
+import { filteredProducts, selectProduct } from '../../store/actions/index'
+import { useDispatch, useSelector } from 'react-redux'
 
-const ProductsScreen = ({navigation}) => {
-    const filteredProducts = useSelector(state => state.products.filteredProducts)
-    const productSelected = useSelector (state => state.products.selected)
+import { Products } from '../../components/index'
+import { View } from 'react-native'
+import { styles } from './styles'
+
+const ProductsScreen = ({ navigation }) => {
+    const dispatch = useDispatch()
+    const selectedCategory = useSelector(state => state.category.selected)
+    const categoryProducts = useSelector(state => state.products.filteredProducts)
+    const productSelected = useSelector(state => state.products.selected)
+
+
     const onHandlerSelectedProduct = (item) => {
-        navigation.navigate ('ProductDetail', { 
-            product: item,
+        dispatch(selectProduct(item.id))
+        navigation.navigate('ProductDetail', { 
             name: item.title
-        })
+         })
     }
-    
+
+    console.log('selectedCategory', selectedCategory)
     return (
-        <View style= {styles.container}>
-            <Products 
-                data={filteredProducts}
-                onSelected = {onHandlerSelectedProduct}
-            >
-
-
-            </Products>
+        <View style={styles.container}>
+            <Products
+                data={categoryProducts}
+                onSelected={onHandlerSelectedProduct}
+            />
         </View>
     )
 }
 
-export default ProductsScreen;
+export default ProductsScreen
