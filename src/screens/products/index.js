@@ -12,6 +12,9 @@ const ProductsScreen = ({ navigation }) => {
     const categoryProducts = useSelector(state => state.products.filteredProducts)
     const productSelected = useSelector(state => state.products.selected)
 
+    useEffect(() => {
+        dispatch(filteredProducts(selectedCategory.id))
+    }, [])
 
     const onHandlerSelectedProduct = (item) => {
         dispatch(selectProduct(item.id))
